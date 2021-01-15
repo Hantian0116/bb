@@ -1,0 +1,55 @@
+1i <body style="margin-left:15%;padding:5px"><p>
+$a </p></body>
+:normal
+/^#/b headings
+/[\*\\`]/b tags
+/^[+\-] \(.*\)$/b lists
+/^[0-9]*\. \(.*\)$/b lists
+/\[.*\](.*)/b links
+s/[^>]$/&<br>/
+/^$/b paragraphs
+
+n
+
+:lists
+# handling list item
+s/^[+\-] \(.*\)$/<li>\1<\/li>/g
+s/^[0-9]*\. \(.*\)$/<li>\1<\/li>/g
+t normal
+
+:tags
+# pre-handle the astrisk and the backslash
+s/\\\*/astrisK/g;
+s/\\\\/backslasH/g;
+# handling code, em and strong tags
+s/`\([^`]\+\)`/<code>\1<\/code>/g;
+s/\*\*\([^(\*\*)]\+\)\*\*/<strong>\1<\/strong>/g;
+s/\*\([^\*]\+\)\*/<em>\1<\/em>/g;
+# handling the escape sequence
+s/astrisK/*/g;
+s/backslasH/\\/g;
+t normal
+
+:headings
+# handling headings
+/^# /s/$/&<\/h1>/;
+s/^# /<h1>/;
+/^## /s/$/&<\/h2>/;
+s/^## /<h2>/;
+/^### /s/$/&<\/h3>/;
+s/^### /<h3>/;
+/^#### /s/$/&<\/h4>/;
+s/^#### /<h4>/;
+/^##### /s/$/&<\/h5>/;
+s/^##### /<h5>/;
+t normal
+
+:paragraphs
+# handling paragraphs
+i <\/p><p>
+t normal
+
+:links
+s/\!\[\(.*\)\](\(.*\))/<img src=\"\2\" alt=\"\1\">/
+s/\[\(.*\)\](\(.*\))/<a href=\"\2\">\1<\/a>/
+t normal
