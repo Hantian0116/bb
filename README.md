@@ -8,9 +8,9 @@ there is no need to install, clone the repository and adjust the settings in `md
 
 ## usage
 
-the `md2html.sh` is the only entrance, run `./md2html.sh <draft-name>` would generate a static web\_page in the html directory. no name management facility is provided, you need to responisible for the names of your blogs.
+the `bb-ls.sh`, `bb-rm.sh`, and `bb-add.sh` are the basic utilities for **list**, **remove**, and **add** posts. there is no namespace management thing, you are responsible to your nomenclatures, for example if you add two post with the same **title**, say 'A post', then `./bb-rm.sh 'A post'` will remove both entries. avoid doing that.
 
 ## todos
 
-- add abstracts to the index page
-- add functionality to remove blogposts.
+- coerce it to the [github page site standard](https://docs.github.com/en/github/working-with-github-pages/about-github-pages) so that the site can be easily hosted on github.
+- cook up some configuration file to manage the directories.
