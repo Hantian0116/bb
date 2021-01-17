@@ -1,4 +1,4 @@
-# A Peom
+# A Poem
 
 this is a poem dedicating to `sed`,
 a less-known sibling of `grep` and `|`.
