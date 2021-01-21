@@ -19,3 +19,4 @@ the `bb-ls.sh`, `bb-rm.sh`, and `bb-add.sh` are the basic utilities for **list**
 - coerce it to the [github page site standard](https://docs.github.com/en/github/working-with-github-pages/about-github-pages) so that the site can be easily hosted on github.
 - create a 'compose' page.
 - move data to a sqlite database for portability.
+- add maths support (via MathJax or KaTeX)
