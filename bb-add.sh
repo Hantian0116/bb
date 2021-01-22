@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
-source ./bin/bb.conf
+. ./bin/bb.conf
 sed -f bin/sed-markdown $DRAFTDIR/$1.md > body.html
 title=`sed -n '/<h1>/p' body.html | cut -d\> -f2 | cut -d\< -f1`
 sed -f bin/sed-html bin/template.html > $HTMLDIR/blogs/$1.html
 sed -i "s/@title@/$title/;
-    10i<div class='timestamp'>`date`</div>
-    10a<a href='../index.html'>back to index</a></p><p>" $HTMLDIR/blogs/$1.html
+    13i<div class='timestamp'>`date`</div>
+    11a<a href='../index.html'>back to index</a></p><p>" $HTMLDIR/blogs/$1.html
 echo "<div class='post_abstract'><a href='./blogs/$1.html'><h2>$title</h2></a>
 <p>" > abstract.html
 sed -n '4,/p><p/p' body.html >> abstract.html

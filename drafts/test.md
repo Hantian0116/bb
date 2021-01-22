@@ -22,3 +22,6 @@ our feeling so **strong**,
 with the beat of our **song**.
 
 this way we *k\*ssed* each other.
+Add some \(a, b, c\).
+
+$$c=\pm\int^{+\infty}_{-\infty}\frac{\sqrt{1+x^2}}{2x}\mathrm{d}x.$$

@@ -2,6 +2,13 @@
 
 **bb** is a small project that i wrote to hone my `sed` skill. the assumption is that cms' are too heavy of a personal blog, we don't need a complicated database to hold less than a handful of pages. the project is at its initial stage, no functionality guaranteed.
 
+## features
+
+1. unordered list support,
+2. **strong**, *italic* tags support,
+3. images, hyperlinks support,
+4. math display via MathJax.
+
 ## installation
 
 there is no need to install, clone the repository and adjust the settings in `md2html.sh` so that it would piping files to your `/var/www/html/` directory.
@@ -19,4 +26,3 @@ the `bb-ls.sh`, `bb-rm.sh`, and `bb-add.sh` are the basic utilities for **list**
 - coerce it to the [github page site standard](https://docs.github.com/en/github/working-with-github-pages/about-github-pages) so that the site can be easily hosted on github.
 - create a 'compose' page.
 - move data to a sqlite database for portability.
-- add maths support (via MathJax or KaTeX)
